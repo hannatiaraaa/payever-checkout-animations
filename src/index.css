@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-color: 255, 255, 255;
+  --background-color: 0, 0, 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-color: 0, 0, 0;
+    --background-color: 255, 255, 255;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(var(--foreground-color));
+  background: rgb(var(--background-color));
+}
+
+@layer components {
+  .p-row {
+    @apply px-3 py-2;
+  }
+}
