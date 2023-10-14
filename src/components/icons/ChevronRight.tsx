@@ -12,9 +12,9 @@ const ChevronRight = ({ color }: TUseColor) => {
       <path
         d='M1 14L7 7.5L1 1'
         stroke={color}
-        stroke-width='1.5'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='1.5'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   );

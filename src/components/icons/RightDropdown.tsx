@@ -11,8 +11,8 @@ const RightDropdown = ({ color = EColor['blue-highlight'] }: TUseColor) => {
       fill='none'
     >
       <path
-        fill-rule='evenodd'
-        clip-rule='evenodd'
+        fillRule='evenodd'
+        clipRule='evenodd'
         d='M2.32 4L1 5.269L8 12L15 5.269L13.68 4L8 9.462L2.32 4Z'
         fill={color}
       />
