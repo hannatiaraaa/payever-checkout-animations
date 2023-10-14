@@ -15,13 +15,14 @@ const Container = ({ theme, children, className, activeNav }: Props) => {
   return (
     <div className={`flex flex-col p-4 gap-4 ${className}`}>
       <TopBar theme={theme} />
-      <div className='flex h-full gap-4'>
+      <div className='hidden lg:flex h-full gap-4'>
         <DockSide
           theme={theme}
           activeNav={activeNav}
         />
         <div className='flex-1'>{children}</div>
       </div>
+      <div className='block lg:hidden'>{children}</div>
     </div>
   );
 };

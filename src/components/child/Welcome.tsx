@@ -1,11 +1,11 @@
 import type { TChild } from '@/types/components.type';
 import { getTextClassName } from '@/utils/getTextClassName';
 
-const WelcomeChild = ({ theme, isHidden }: TChild) => {
+const WelcomeChild = ({ theme, isInvisible }: TChild) => {
   const textColor = getTextClassName(theme);
   const text = `text-sm ${textColor}`;
   return (
-    <div className={`w-full ${isHidden ? 'hidden' : 'flex'} flex-col gap-3 `}>
+    <div className={`w-full ${isInvisible ? 'invisible' : 'flex'} flex-col gap-3`}>
       <p className={`${textColor} text-sm font-medium`}>ORDER</p>
       <div
         className={`${

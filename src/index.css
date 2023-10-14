@@ -15,6 +15,7 @@
 }
 
 body {
+  overflow: hidden;
   font-family: 'Roboto', sans-serif;
   color: rgb(var(--foreground-color));
   background: rgb(var(--background-color));

@@ -3,9 +3,9 @@ import { getExtraBgClassName } from '@/utils/getBgClassName';
 import { sectionStep2 } from '@/configs/sectionList';
 import ChannelItem from '@/components/cards/ChannelItem';
 
-const ChannelChild = ({ theme, isHidden }: TChild) => {
+const ChannelChild = ({ theme, isInvisible }: TChild) => {
   return (
-    <div className={`${isHidden ? 'hidden' : 'block'} ${getExtraBgClassName(theme)} rounded-xl`}>
+    <div className={`${isInvisible ? 'invisible' : 'block'} ${getExtraBgClassName(theme)} rounded-xl`}>
       {sectionStep2.map(({ name, icon }) => (
         <ChannelItem
           key={name}

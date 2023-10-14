@@ -4,7 +4,7 @@ import type { TParent } from '@/types/components.type';
 import SectionChild from '@/components/child/Section';
 import { getTextClassName } from '@/utils/getTextClassName';
 
-const Section = ({ theme, children }: TParent) => {
+const Section = ({ theme, children, id, isVisible }: TParent) => {
   return (
     <div className='gap-2 flex flex-col'>
       <p className={`text-xl font-bold ${getTextClassName(theme)}`}>Section</p>
@@ -19,12 +19,14 @@ const Section = ({ theme, children }: TParent) => {
         step={2}
         theme={theme}
       >
-        {children ?? (
-          <SectionChild
-            isHidden={children ?? false}
-            theme={theme}
-          />
-        )}
+        <div id={id}>
+          {children ?? (
+            <SectionChild
+              isInvisible={!isVisible}
+              theme={theme}
+            />
+          )}
+        </div>
       </SectionCard>
       <SectionCard
         title='STEP 3 (CONFIRMATION)'

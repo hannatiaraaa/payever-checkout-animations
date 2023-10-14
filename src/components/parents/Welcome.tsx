@@ -42,26 +42,31 @@ const RenderTitles = () => {
   ));
 };
 
-const Welcome = ({ theme, children }: TParent) => {
+const Welcome = ({ theme, children, id, isVisible }: TParent) => {
   const { dark, light } = icons;
   const logo = theme === 'light' ? light.payever : dark.payever;
   return (
     <div className='px-4 w-full'>
       <RenderCheckoutName theme={theme} />
       <div className='w-full grid place-items-center'>
-        <div className='w-2/3 gap-3'>
+        <div className='w-4/5 lg:w-2/3 gap-3'>
           <img
             src={logo}
             alt='payever'
             className='h-3 my-8 object-contain'
           />
-          <div className='w-full flex flex-col gap-3 '>
-            {children ?? (
-              <WelcomeChild
-                isHidden={children ?? false}
-                theme={theme}
-              />
-            )}
+          <div className='w-full flex flex-col gap-3'>
+            <div
+              id={id}
+              className='w-full'
+            >
+              {children ?? (
+                <WelcomeChild
+                  isInvisible={!isVisible}
+                  theme={theme}
+                />
+              )}
+            </div>
             <Button
               className={getExtraBgClassName(theme)}
               color={theme === 'light' ? ELightColor['primary-text'] : EDarkColor['primary-text']}
